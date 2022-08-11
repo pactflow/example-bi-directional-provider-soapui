@@ -10,10 +10,10 @@ OAS_PATH=oas/products.yml
 REPORT_PATH?=project/reports/TEST-Product_API_TestSuite.xml
 REPORT_FILE_CONTENT_TYPE?=text/xml
 VERIFIER_TOOL?=soapui
-ENDPOINT?=http://localhost:3001
+ENDPOINT:=http://localhost:3001
 # Docker command tested against linux(GH actions) / macosx locally
 # Needs testing on windows
-READY_RUNNER_DOCKER_PATH?=docker run --rm --network="host" -v=${PWD}/project:/project -e ENDPOINT=${ENDPOINT} -e COMMAND_LINE="'-e${ENDPOINT}' '-f/project/reports' '-RJUnit-Style HTML Report' /project/Project-1-soapui-project.xml" smartbear/soapuios-testrunner:latest
+READY_RUNNER_DOCKER_PATH?=docker run --rm --network="host" -v=${PWD}/project:/project -e ENDPOINT=${ENDPOINT} -e COMMAND_LINE="'-e${ENDPOINT}' '-f/project/reports' -r -j /project/Project-1-soapui-project.xml" smartbear/soapuios-testrunner:latest
 # RAPI_RUNNER can be set to local SoapUI installation if available, otherwise will default to docker
 # RAPI_RUNNER=local
 READY_API_LOCAL_INSTALLATION_PATH_MAC?=/Applications/SoapUI-5.7.0.app/Contents/java/app/bin/testrunner.sh
