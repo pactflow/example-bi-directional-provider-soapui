@@ -35,9 +35,11 @@ const baseOpts = {
 // Setup provider server to verify
 
 const setupServer = () => {
-  const app = require("express")();
-  const authMiddleware = require("../middleware/auth.middleware");
-  app.use(authMiddleware);
+  const express = require("express");
+  const app = express();
+  app.use(express.json());
+  // const authMiddleware = require("../middleware/auth.middleware");
+  // app.use(authMiddleware);
   app.use(require("./product.routes"));
   const server = app.listen("8080");
   return server;
