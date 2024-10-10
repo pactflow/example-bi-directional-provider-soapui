@@ -16,7 +16,7 @@ ENDPOINT:=http://localhost:3001
 READY_RUNNER_DOCKER_PATH?=docker run --rm --network="host" -v=${PWD}/project:/project -e ENDPOINT=${ENDPOINT} -e COMMAND_LINE="'-e${ENDPOINT}' '-f/project/reports' -r -j /project/Project-1-soapui-project.xml" smartbear/soapuios-testrunner:latest
 # RAPI_RUNNER can be set to local SoapUI installation if available, otherwise will default to docker
 # RAPI_RUNNER=local
-READY_API_LOCAL_INSTALLATION_PATH_MAC?=/Applications/SoapUI-5.7.0.app/Contents/java/app/bin/testrunner.sh
+READY_API_LOCAL_INSTALLATION_PATH_MAC?=/Applications/SoapUI-5.7.2.app/Contents/java/app/bin/testrunner.sh
 # Default installation paths for Linux/Windows to be added/tested
 READY_API_LOCAL_INSTALLATION_PATH_LINUX?=TODO
 READY_API_LOCAL_INSTALLATION_PATH_WIN?=TODO
